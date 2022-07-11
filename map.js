@@ -103,7 +103,7 @@ config.chapters.forEach((record, idx) => {
     if (record.imageCredit) {
         var imageCredit = document.createElement('p');
         imageCredit.classList.add('imageCredit');
-        imageCredit.innerHTML = 'Image credit: ' + record.imageCredit;
+        imageCredit.innerHTML = record.imageCredit;
         chapter.appendChild(imageCredit);
     }
     // Creates the description for the vignette
@@ -111,6 +111,63 @@ config.chapters.forEach((record, idx) => {
         var story = document.createElement('p');
         story.innerHTML = record.description;
         chapter.appendChild(story);
+    }
+    // Creates the legend for the map layer
+    if (record.chapterLegend) {
+      var legend = record.chapterLegend.legend;
+      var legendElement =  document.createElement('div');
+      legendElement.className = 'legend-overlay';
+      legendElement.id = 'legend';
+      var title = document.createElement('h4');
+      title.innerText = legend.title;
+      legendElement.appendChild(title);
+
+      if (record.chapterLegend.type == "choropleth"){
+        if (legend.colors.length == legend.breaks.length) {
+          // add legend-items
+          for (let i = 0; i < legend.colors.length; i++) {
+            var legendDiv = document.createElement('div');
+            var legendItem = document.createElement('span');
+            legendItem.className = 'legend-item';
+            legendItem.style.backgroundColor = legend.colors[i];
+
+            var value = document.createElement('span');
+            value.innerHTML = `${legend.breaks[i].toLocaleString("en-US")}`;
+            legendDiv.appendChild(legendItem);
+            legendDiv.appendChild(value);
+            legendElement.appendChild(legendDiv);
+          }
+        }
+      }
+      if (record.chapterLegend.type == "bubble") {
+        if (legend.sizes.length == legend.breaks.length) {
+          // add legend-items
+          for (let i = 0; i < legend.sizes.length; i++) {
+            var legendDiv = document.createElement('div');
+            legendDiv.style.float = "left";
+            var legendItem = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            legendItem.setAttribute("height",40);
+            legendItem.setAttribute("width",40);
+
+            var bubble = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            bubble.setAttribute("fill", legend.color);
+            bubble.setAttribute("cx", 20);
+            bubble.setAttribute("cy", 20);
+            bubble.setAttribute("r", legend.sizes[i]);
+            legendItem.appendChild(bubble);
+
+            var value = document.createElement('span');
+            value.innerHTML = `${legend.breaks[i].toLocaleString("en-US")}`;
+            value.style.paddingLeft = "5px";
+            value.style.marginBottom = "15px";
+            legendDiv.appendChild(legendItem);
+            legendDiv.append(value);
+            legendElement.appendChild(legendDiv);
+          }
+        }
+      }
+
+      record['legendElement'] = legendElement;
     }
     // Sets the id for the vignette and adds the step css attribute
     container.setAttribute('id', record.id);
@@ -128,7 +185,6 @@ config.chapters.forEach((record, idx) => {
 
 // Appends the features element (with the vignettes) to the story element
 story.appendChild(features);
-
 
 // Adds the Mapbox access token
 mapboxgl.accessToken = config.accessToken;
@@ -192,6 +248,9 @@ map.on("load", function () {
             if (chapter.onChapterEnter.length > 0) {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
             }
+            if ("legendElement" in chapter) {
+              document.body.appendChild(chapter.legendElement);
+            }
         })
         .onStepExit(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
@@ -199,6 +258,7 @@ map.on("load", function () {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
+            document.body.removeChild(document.getElementById('legend'));
         });
 });
 
