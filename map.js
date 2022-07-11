@@ -121,7 +121,18 @@ config.chapters.forEach((record, idx) => {
       var title = document.createElement('h4');
       title.innerText = legend.title;
       legendElement.appendChild(title);
+      if ("extraLegend" in record.chapterLegend) {
+        var legendDiv = document.createElement('div');
+        var legendItem = document.createElement('span');
+        legendItem.className = 'legend-item';
+        legendItem.style.backgroundColor = record.chapterLegend.extraLegend["trace-color"];
 
+        var value = document.createElement('span');
+        value.innerHTML = `${record.chapterLegend.extraLegend.label}`;
+        legendDiv.appendChild(legendItem);
+        legendDiv.appendChild(value);
+        legendElement.appendChild(legendDiv);
+      }
       if (record.chapterLegend.type == "choropleth"){
         if (legend.colors.length == legend.breaks.length) {
           // add legend-items
@@ -166,6 +177,8 @@ config.chapters.forEach((record, idx) => {
           }
         }
       }
+
+
 
       record['legendElement'] = legendElement;
     }
