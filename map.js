@@ -157,8 +157,8 @@ config.chapters.forEach((record, idx) => {
             var legendDiv = document.createElement('div');
             legendDiv.style.float = "left";
             var legendItem = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            legendItem.setAttribute("height",40);
-            legendItem.setAttribute("width",40);
+            legendItem.setAttribute("height", 40);
+            legendItem.setAttribute("width", 40);
 
             var bubble = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             bubble.setAttribute("fill", legend.color);
@@ -271,7 +271,10 @@ map.on("load", function () {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
-            document.body.removeChild(document.getElementById('legend'));
+            if (document.getElementById('legend')) {
+              document.body.removeChild(document.getElementById('legend'));
+            }
+            
         });
 });
 
