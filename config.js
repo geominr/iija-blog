@@ -11,8 +11,8 @@ var config = {
         {
             id: 'intro',
             title: 'Is $15 Billion enough?',
-            image: 'https://www.asdwa.org/wp-content/uploads/2019/08/Lead-water-main-2-1024x768.jpg',
-            imageCredit: '<a href="">ASDWA</a>',
+            image: '',
+            imageCredit: '',
             description: "There are believed to be between 6 and 10 million lead service lines in use throughout the United States. Will $15 billion be enough to replace them all with safer ones?",
             location: {
                 center: [-99.429,38.679],
@@ -80,8 +80,8 @@ var config = {
         {
             id: 'midwest0',
             title: 'A legacy of hazardous infrastructure',
-            image: 'https://www.asdwa.org/wp-content/uploads/2019/08/Lead-water-main-2-1024x768.jpg',
-            imageCredit: '<a href="#">ASDWA</a>',
+            image: '',
+            imageCredit: '',
             description: "Majority of these service lines are concentrated in the Midwestern cities like Chicago, Detroit, Toledo and Cleveland, as well as cities throughout the Mid-Atlantic and the South.",
             location: {
               center:[-85.439,42.980],
@@ -115,8 +115,8 @@ var config = {
         {
             id: 'midwest1',
             title: 'A legacy of hazardous infrastructure',
-            image: 'https://www.asdwa.org/wp-content/uploads/2019/08/Lead-water-main-2-1024x768.jpg',
-            imageCredit: '<a href="#">ASDWA</a>',
+            image: '',
+            imageCredit: '',
             description: "Anywhere between 20 to 70% of the service connections in these urban water systems are made of lead, installed underground anytime between 40 and 140 years ago.",
             location: {
               center:[-85.439,42.980],
@@ -150,8 +150,8 @@ var config = {
         {
             id: 'dollarsPerLSL',
             title: 'Who gets the most money for LSL replacement?',
-            image: 'https://www.asdwa.org/wp-content/uploads/2019/08/Lead-water-main-2-1024x768.jpg',
-            imageCredit: '<a href="#">ASDWA</a>',
+            image: '',
+            imageCredit: '',
             description: "If you map out how much money each state is allocated, you’ll see that western states with very few lead pipes--like Hawaii, Alaska, Nevada, California, Utah and Idaho--will receive anywhere between $15 and $139 thousand per lead service line.",
             location: {
               center: [-99.429,38.679],
@@ -184,8 +184,8 @@ var config = {
         {
             id: 'hawaii',
             title: '',
-            image: 'https://www.asdwa.org/wp-content/uploads/2019/08/Lead-water-main-2-1024x768.jpg',
-            imageCredit: '<a href="#">ASDWA</a>',
+            image: '',
+            imageCredit: '',
             description: "Hawaii will receive $390 million to replace its estimated 2,800 lead service lines. More than $139,000 per pipe.",
             location: {
               center: [-159.007,20.578],
@@ -220,7 +220,7 @@ var config = {
             id: 'percapita',
             title: 'Who gets the most money for LSL replacement?',
             image: '',
-            imageCredit: '<a href="#">ASDWA</a>',
+            imageCredit: '',
             description: "Now let’s look at how many lead service lines there are, per capita, in each state. It’s clear that the Midwestern states--where most of the lead pipes exist--will receive significantly less investment per line, or roughly $2,800 on average.",
             location: {
               center: [-99.429,38.679],
@@ -254,7 +254,7 @@ var config = {
             id: 'midwest2',
             title: 'Meanwhile, in the Midwest...',
             image: '',
-            imageCredit: '<a href="#">ASDWA</a>',
+            imageCredit: '',
             description: "The likes of Michigan, Ohio, Wisconsin, Illinois and New Jersey are left to do more with less. That's why cities across the region will need to invest early in cost-saving tech to replace more lead service lines.",
             location: {
               center:[-90.47,42.408],
@@ -321,9 +321,9 @@ var config = {
         {
             id: 'toledoLSL2',
             title: 'Collecting Reliable Data',
-            image: 'https://media-exp1.licdn.com/dms/image/C4E22AQFZ3xh4R0ZVRA/feedshare-shrink_1280/0/1620143875527?e=1657152000&v=beta&t=1D5kEDwg69pR9R_Bi833ZKGPO9lt6e4t4FUI98_Ps2c',
-            imageCredit: '<a href="#">BlueConduit</a>',
-            description: "...",
+            image: '',
+            imageCredit: '',
+            description: "It all starts with an inventory of verified service line materials. But records of when lead pipes were installed or replaced are incomplete and unreliable. So the utility department uses cheap methods to inspect homes across the City, documenting the location of lead, copper and other types of water service pipes.",
             location: {
               center: [-83.568,41.651],
               zoom: 15.49,
@@ -355,9 +355,9 @@ var config = {
         {
             id: 'toledoLSL3',
             title: 'Finding the lead with machine learning',
-            image: 'https://blueconduit.com/wp-content/uploads/2022/04/Dig-Toledo-1024x768.jpg',
-            imageCredit: '<a href="#">BlueConduit</a>',
-            description: "...",
+            image: '',
+            imageCredit: '',
+            description: "Using a representative sample of inspection records, Toledo can estimate the likelihood that the connection at every house contains lead, with the help of BlueConduit’s machine learning technology.",
             location: {
               center: [-83.568,41.651],
               zoom: 15.49,
@@ -391,7 +391,7 @@ var config = {
             title: 'Getting the Lead Out Together',
             image: 'https://blueconduit.com/wp-content/uploads/2022/03/BlueConduit-Toledo-Site-208.jpg',
             imageCredit: '<a href="#">BlueConduit</a>',
-            description: "...",
+            description: "Guided by local data, algorithms and lessons learned in over 50 cities around the country, the City of Toledo plans to replace all of their lead service lines by 2027 and prioritize the communities with the highest risk and the most vulnerable populations.",
             location: {
               center: [-83.576,41.665],
               zoom: 11.5,
@@ -441,7 +441,7 @@ var config = {
             title: 'Replacing all 6.8 million lead service lines',
             image: '',
             imageCredit: '',
-            description: "Using this technology, BlueConduit is able to find the communities with the most lead service lines.",
+            description: "For the hundreds of other cities like Toledo, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and create better outcomes for millions of Americans.",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,
