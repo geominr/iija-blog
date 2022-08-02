@@ -315,7 +315,10 @@ var config = {
             onChapterExit: [
 
             ],
-            chapterLegend:false,
+            chapterLegend:{
+              type: "none",
+              legend: "none"
+            },
         },
       // Collecting reliable data
         {
@@ -345,8 +348,8 @@ var config = {
             chapterLegend: {
               type:'choropleth',
               legend:{
-                "colors":["#ffffff","#fb3737"],
-                "breaks":["Non-Lead","Lead"],
+                "colors":["#ffffff","#fb3737","rgba(11, 37, 83)"],
+                "breaks":["Non-Lead","Lead","Unknown"],
                 "title": "Water Service Line Material"
               }
             }

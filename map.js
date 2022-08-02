@@ -17,6 +17,12 @@ var alignments = {
     'right': 'righty'
 }
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 /* These two functions help turn on and off individual layers (through their
 opacity attributes):
 The first one gets the type of layer (from a name specified on the config.js file)
@@ -116,70 +122,69 @@ config.chapters.forEach((record, idx) => {
     if (record.chapterLegend) {
       var legend = record.chapterLegend.legend;
       var legendElement =  document.createElement('div');
-      legendElement.className = 'legend-overlay';
-      legendElement.id = 'legend';
-      var title = document.createElement('h4');
-      title.innerText = legend.title;
-      legendElement.appendChild(title);
-      if ("extraLegend" in record.chapterLegend) {
-        var legendDiv = document.createElement('div');
-        var legendItem = document.createElement('span');
-        legendItem.className = 'legend-item';
-        legendItem.style.backgroundColor = record.chapterLegend.extraLegend["trace-color"];
+      if (legend != "none") {
+        legendElement.className = 'legend-overlay';
+        legendElement.id = 'legend';
+        var title = document.createElement('h4');
+        title.innerText = legend.title;
+        legendElement.appendChild(title);
+        if ("extraLegend" in record.chapterLegend) {
+          var legendDiv = document.createElement('div');
+          var legendItem = document.createElement('span');
+          legendItem.className = 'legend-item';
+          legendItem.style.backgroundColor = record.chapterLegend.extraLegend["trace-color"];
 
-        var value = document.createElement('span');
-        value.innerHTML = `${record.chapterLegend.extraLegend.label}`;
-        legendDiv.appendChild(legendItem);
-        legendDiv.appendChild(value);
-        legendElement.appendChild(legendDiv);
-      }
-      if (record.chapterLegend.type == "choropleth"){
-        if (legend.colors.length == legend.breaks.length) {
-          // add legend-items
-          for (let i = 0; i < legend.colors.length; i++) {
-            var legendDiv = document.createElement('div');
-            var legendItem = document.createElement('span');
-            legendItem.className = 'legend-item';
-            legendItem.style.backgroundColor = legend.colors[i];
+          var value = document.createElement('span');
+          value.innerHTML = `${record.chapterLegend.extraLegend.label}`;
+          legendDiv.appendChild(legendItem);
+          legendDiv.appendChild(value);
+          legendElement.appendChild(legendDiv);
+        }
+        if (record.chapterLegend.type == "choropleth"){
+          if (legend.colors.length == legend.breaks.length) {
+            // add legend-items
+            for (let i = 0; i < legend.colors.length; i++) {
+              var legendDiv = document.createElement('div');
+              var legendItem = document.createElement('span');
+              legendItem.className = 'legend-item';
+              legendItem.style.backgroundColor = legend.colors[i];
 
-            var value = document.createElement('span');
-            value.innerHTML = `${legend.breaks[i].toLocaleString("en-US")}`;
-            legendDiv.appendChild(legendItem);
-            legendDiv.appendChild(value);
-            legendElement.appendChild(legendDiv);
+              var value = document.createElement('span');
+              value.innerHTML = `${legend.breaks[i].toLocaleString("en-US")}`;
+              legendDiv.appendChild(legendItem);
+              legendDiv.appendChild(value);
+              legendElement.appendChild(legendDiv);
+            }
+          }
+        }
+        if (record.chapterLegend.type == "bubble") {
+          if (legend.sizes.length == legend.breaks.length) {
+            // add legend-items
+            for (let i = 0; i < legend.sizes.length; i++) {
+              var legendDiv = document.createElement('div');
+              legendDiv.style.float = "left";
+              var legendItem = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+              legendItem.setAttribute("height", 40);
+              legendItem.setAttribute("width", 40);
+
+              var bubble = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+              bubble.setAttribute("fill", legend.color);
+              bubble.setAttribute("cx", 20);
+              bubble.setAttribute("cy", 20);
+              bubble.setAttribute("r", legend.sizes[i]);
+              legendItem.appendChild(bubble);
+
+              var value = document.createElement('span');
+              value.innerHTML = `${legend.breaks[i].toLocaleString("en-US")}`;
+              value.style.paddingLeft = "5px";
+              value.style.marginBottom = "15px";
+              legendDiv.appendChild(legendItem);
+              legendDiv.append(value);
+              legendElement.appendChild(legendDiv);
+            }
           }
         }
       }
-      if (record.chapterLegend.type == "bubble") {
-        if (legend.sizes.length == legend.breaks.length) {
-          // add legend-items
-          for (let i = 0; i < legend.sizes.length; i++) {
-            var legendDiv = document.createElement('div');
-            legendDiv.style.float = "left";
-            var legendItem = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            legendItem.setAttribute("height", 40);
-            legendItem.setAttribute("width", 40);
-
-            var bubble = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            bubble.setAttribute("fill", legend.color);
-            bubble.setAttribute("cx", 20);
-            bubble.setAttribute("cy", 20);
-            bubble.setAttribute("r", legend.sizes[i]);
-            legendItem.appendChild(bubble);
-
-            var value = document.createElement('span');
-            value.innerHTML = `${legend.breaks[i].toLocaleString("en-US")}`;
-            value.style.paddingLeft = "5px";
-            value.style.marginBottom = "15px";
-            legendDiv.appendChild(legendItem);
-            legendDiv.append(value);
-            legendElement.appendChild(legendDiv);
-          }
-        }
-      }
-
-
-
       record['legendElement'] = legendElement;
     }
     // Sets the id for the vignette and adds the step css attribute
@@ -262,8 +267,11 @@ map.on("load", function () {
                 chapter.onChapterEnter.forEach(setLayerOpacity);
             }
             if ("legendElement" in chapter) {
-              document.body.appendChild(chapter.legendElement);
+              var legendbox = document.getElementById('legend');
+              removeAllChildNodes(legendbox);
+              legendbox.appendChild(chapter.legendElement);
             }
+
         })
         .onStepExit(response => {
             var chapter = config.chapters.find(chap => chap.id === response.element.id);
@@ -271,13 +279,17 @@ map.on("load", function () {
             if (chapter.onChapterExit.length > 0) {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
-            if (document.getElementById('legend')) {
-              document.body.removeChild(document.getElementById('legend'));
-            }
-            
         });
 });
 
 /* Here we watch for any resizing of the screen to
 adjust our scrolling setup */
 window.addEventListener('resize', scroller.resize);
+
+// Remove legend if you're on the home page
+window.addEventListener('scroll', function() {
+  if (window.scrollY <= 1010) {
+    var legendbox = document.getElementById('legend');
+    removeAllChildNodes(legendbox);
+  }
+})
