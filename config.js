@@ -117,7 +117,7 @@ var config = {
             title: 'A legacy of hazardous infrastructure',
             image: '',
             imageCredit: '',
-            description: "Anywhere between 20 to 70% of the service connections in these urban water systems are made of lead, installed underground anytime between 40 and 140 years ago.",
+            description: "Anywhere between 20 to 70% of the service connections in these urban water systems are made of lead, installed underground anytime between 40 and 140 years ago. So how far will the Infrastructure Bill go toward helping these communities?",
             location: {
               center:[-85.439,42.980],
               zoom:5.09,
@@ -152,7 +152,7 @@ var config = {
             title: 'Who gets the most money for LSL replacement?',
             image: '',
             imageCredit: '',
-            description: "If you map out how much money each state is allocated, you’ll see that western states with very few lead pipes--like Hawaii, Alaska, Nevada, California, Utah and Idaho--will receive anywhere between $15 and $139 thousand per lead service line.",
+            description: "When we map out how much money each state is allocated, it is clear that the apportionment was not guided by the number of lead service lines per state. This map shows Western states with relatively fewer lead pipes will receive anywhere between $15,000 and $139,000 per lead service line.",
             location: {
               center: [-99.429,38.679],
               zoom: 3.87,
@@ -180,16 +180,16 @@ var config = {
               }
             }
         },
-      // Hawaii
+      // California
         {
-            id: 'hawaii',
+            id: 'california',
             title: '',
             image: '',
             imageCredit: '',
-            description: "Hawaii will receive $390 million to replace its estimated 2,800 lead service lines. More than $139,000 per pipe.",
+            description: "California will receive $3.5 billion to replace its estimated 65,000 lead service lines. More than $53,846 per pipe. Fortunately, the excess money for lead pipe replacement can be used to solve other pressing drinking water challenges, like drought management.",
             location: {
-              center: [-159.007,20.578],
-              zoom: 5.63,
+              center: [-119.517,37.271],
+              zoom: 5.53,
               pitch:0,
               bearing:0
             },
@@ -218,10 +218,10 @@ var config = {
       // who gets money? 2
         {
             id: 'percapita',
-            title: 'Who gets the most money for LSL replacement?',
+            title: 'What’s left over for the Midwest?',
             image: '',
             imageCredit: '',
-            description: "Now let’s look at how many lead service lines there are, per capita, in each state. It’s clear that the Midwestern states--where most of the lead pipes exist--will receive significantly less investment per line, or roughly $2,800 on average.",
+            description: "Now consider how many lead service lines there are per capita in each state. Midwestern states--where most of the country’s lead pipes exist--will receive roughly $2,800 of investment per line. To put this in context, in 2019, the EPA estimates replacing a known lead service line costs $4,700, on average.",
             location: {
               center: [-99.429,38.679],
               zoom: 3.87,
@@ -252,10 +252,10 @@ var config = {
       // who gets money? not the midwest
         {
             id: 'midwest2',
-            title: 'Meanwhile, in the Midwest...',
+            title: 'Barely scratching the surface',
             image: '',
             imageCredit: '',
-            description: "The likes of Michigan, Ohio, Wisconsin, Illinois and New Jersey are left to do more with less. That's why cities across the region will need to invest early in cost-saving tech to replace more lead service lines.",
+            description: "For the likes of Michigan, Ohio, Wisconsin, Illinois and New Jersey, $2,800 barely scratches the surface for developing a service line inventory, let alone ultimately replacing the pipes. That's why cities across the region will need to invest early in cost-saving tech to replace more lead service lines.",
             location: {
               center:[-90.47,42.408],
               zoom: 4.57,
@@ -302,7 +302,31 @@ var config = {
             title: 'Case study: Toledo, Ohio',
             image: 'https://blueconduit.com/wp-content/uploads/2022/04/Toledo-announcement-1024x771.jpg',
             imageCredit: '<a href="#">BlueConduit</a>',
-            description: "In Ohio, the City of Toledo is using data analytics and machine learning to find and replace their lead service lines, starting in the communities with the most need.",
+            description: "In Ohio, the City of Toledo is partnering with BlueConduit to use data analytics and machine learning to find and replace their lead service lines, starting in the communities with the most need.",
+            location: {
+              center: [-83.576,41.665],
+              zoom: 11.5,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+
+            ],
+            onChapterExit: [
+
+            ],
+            chapterLegend:{
+              type: "none",
+              legend: "none"
+            },
+        },
+      // Flint
+        {
+            id: 'homageToFlint',
+            title: 'Lessons learned from Flint, MI',
+            image: '',
+            imageCredit: '',
+            description: "BlueConduit’s technology was pioneered in Flint, MI in 2016 after the City’s water crisis unfolded. Without BlueConduit’s guidance, it cost Flint nearly $24,000 per successful replacement because poor records left the city guessing (often incorrectly) where the lead was. Thanks to big data and machine learning, BlueConduit took away the guesswork and brought down the cost per replacement by 75% to $6,000.",
             location: {
               center: [-83.576,41.665],
               zoom: 11.5,
@@ -326,7 +350,7 @@ var config = {
             title: 'Collecting Reliable Data',
             image: '',
             imageCredit: '',
-            description: "It all starts with an inventory of verified service line materials. But records of when lead pipes were installed or replaced are incomplete and unreliable. So the utility department uses cheap methods to inspect homes across the City, documenting the location of lead, copper and other types of water service pipes.",
+            description: "The process starts with an inventory of verified service line materials. But records of when lead pipes were installed or replaced are incomplete and unreliable. So the utility department uses cheap methods to inspect homes across the City, documenting the location of lead, copper and other types of water service pipes.",
             location: {
               center: [-83.568,41.651],
               zoom: 15.49,
@@ -444,7 +468,77 @@ var config = {
             title: 'Replacing all 6.8 million lead service lines',
             image: '',
             imageCredit: '',
-            description: "For the hundreds of other cities like Toledo, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and create better outcomes for millions of Americans.",
+            description: "For the hundreds of other cities like Toledo, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and create better outcomes for millions of Americans.<br><br>Interested in learning more about BlueConduit? <br><br> <a href='https://blueconduit.com/get-a-demo/'><button class='cu-button'>Get a Demo</button></a>",
+            location: {
+              center: [-99.429,38.679],
+              zoom: 3.27,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0.75
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0
+                }
+            ],
+            chapterLegend: {
+              type:'bubble',
+              legend:{
+                "color":"#e8aa44",
+                "sizes":[0.5, 1.7, 2.5, 5, 10, 20],
+                "breaks":[0, 2500, 5000, 10000, 20000, 50000],
+                "title": "Estimated Lead Service Lines"
+              }
+            }
+        },
+      // concluding CTAs
+        {
+            id: 'CTAs',
+            title: 'Want to learn more about lead in water?',
+            image: '',
+            imageCredit: '',
+            description: "<a href='https://www.nrdc.org/experts/erik-d-olson/how-can-i-find-out-if-i-have-lead-service-line'><h3>How Can I Find Out If I Have a Lead Service Line? (NRDC blog)</h3></a> <br> <a href='https://www.nrdc.org/stories/what-you-need-know-about-lead-service-line-replacement#:~:text=If%20you%20do%20have%20a,free%20or%20at%20reduced%20cost.'><h3> What You Need to Know About Lead Service Line Replacement (NRDC)</h3></a> <br> <a href='https://www.nrdc.org/lead-pipes-widespread-used-every-state#:~:text=After%20conducting%20a%20survey%20of,that%20claim%20to%20have%20none.'><h3> Lead Service Lines are Widespread and Used in Every State (NRDC Article)</h3></a>",
+            location: {
+              center: [-99.429,38.679],
+              zoom: 3.27,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0.75
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0
+                }
+            ],
+            chapterLegend: {
+              type:'bubble',
+              legend:{
+                "color":"#e8aa44",
+                "sizes":[0.5, 1.7, 2.5, 5, 10, 20],
+                "breaks":[0, 2500, 5000, 10000, 20000, 50000],
+                "title": "Estimated Lead Service Lines"
+              }
+            }
+        },
+      // thank you
+        {
+            id: 'thankyou',
+            title: 'Thank you for reading!',
+            image: '',
+            imageCredit: '',
+            description: "<small>Data sources:<br>NRDC<br>BlueConduit<br>US Census Bureau <br><br>Maps and animations by Raanan Gurewitsch</small>",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,
