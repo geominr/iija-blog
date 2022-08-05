@@ -85,14 +85,8 @@ body {
   padding: 1em;
   margin: 0px auto;
 }
-a {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
 a, a:hover, a:visited {
-  color: #e96138;
+  color: white;
 }
 .centered {
   width: 50vw;
