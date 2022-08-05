@@ -2,10 +2,10 @@ var config = {
     accessToken: 'pk.eyJ1IjoiYmx1ZWNvbmR1aXQtcmFhbmFuIiwiYSI6ImNrcDQ1dmI5cTA3YWgyeHQ4eTgya3RkbmMifQ.Yy7t6IfU4KV2QTGhl91PZA',
     style: 'mapbox://styles/blueconduit-raanan/cl3uawu86002l16o3wjz045l6',
     alignment: 'left',
-    toptitle: 'BlueConduit | Data Science Blog | June 2022',
-    title: "How will the US replace 7 million lead pipes?",
+    toptitle: 'BlueConduit | Data Science Blog | August 2022',
+    title: "Funding for Lead Pipe Replacement Falls Short for Midwest",
     byline: 'By Raanan Gurewitsch and Sheela Lal',
-    description: "<p>At the end of 2021, the United States government made an historic investment in the nation's infrastructure. Over the next five years, more than half of a trillion dollars will go to revitalizing roads and bridges, rail, transit, ports, airports, broadband and water systems.</p><p>Of the $550 billion in the Infrastructure Investment and Jobs Act (IIJA), $15 billion are earmarked for replacing lead water pipes, a paragon of the nation’s aging infrastructure, which deliver drinking water to tens of millions of people in the United States.</p><p>Putting those dollars to work - and spending them effectively - will take a lot of planning, coordination and of course, data.</p>",
+    description: "<small>Best viewed on Desktop or mobile Landscape Mode.</small><br><p>At the end of 2021, the United States government made an historic investment in the nation's infrastructure. Over the next five years, more than half of a trillion dollars will go to revitalizing roads and bridges, rail, transit, ports, airports, broadband and water systems.</p><p>Of the $550 billion in the Infrastructure Investment and Jobs Act (IIJA), $15 billion are earmarked for replacing lead water pipes, a paragon of the nation’s aging infrastructure, which deliver drinking water to tens of millions of people in the United States.</p><p>Putting those dollars to work - and spending them effectively - will take a lot of planning, coordination and of course, data.</p>",
     chapters: [
       // intro
         {
@@ -301,8 +301,8 @@ var config = {
             id: 'toledoLSL0',
             title: 'Case study: Toledo, Ohio',
             image: 'https://blueconduit.com/wp-content/uploads/2022/04/Toledo-announcement-1024x771.jpg',
-            imageCredit: '<a href="#">BlueConduit</a>',
-            description: "In Ohio, the City of Toledo is partnering with BlueConduit to use data analytics and machine learning to find and replace their lead service lines, starting in the communities with the most need.",
+            imageCredit: '<a href="https://blueconduit.com">BlueConduit</a>',
+            description: "In Ohio, the City of Toledo is partnering with <a href='https://blueconduit.com'>BlueConduit</a> to use data analytics and machine learning to find and replace their lead service lines, starting in the communities with the most need.",
             location: {
               center: [-83.576,41.665],
               zoom: 11.5,
@@ -328,8 +328,8 @@ var config = {
             imageCredit: '',
             description: "BlueConduit’s technology was pioneered in Flint, MI in 2016 after the City’s water crisis unfolded. Without BlueConduit’s guidance, it cost Flint nearly $24,000 per successful replacement because poor records left the city guessing (often incorrectly) where the lead was. Thanks to big data and machine learning, BlueConduit took away the guesswork and brought down the cost per replacement by 75% to $6,000.",
             location: {
-              center: [-83.576,41.665],
-              zoom: 11.5,
+              center: [-83.829,43.039],
+              zoom: 9.17,
               pitch:0,
               bearing:0
             },
@@ -511,25 +511,14 @@ var config = {
               bearing:0
             },
             onChapterEnter: [
-                {
-                    layer: 'pws-lsl-estimated',
-                    opacity: 0.75
-                }
+
             ],
             onChapterExit: [
-                {
-                    layer: 'pws-lsl-estimated',
-                    opacity: 0
-                }
+
             ],
             chapterLegend: {
-              type:'bubble',
-              legend:{
-                "color":"#e8aa44",
-                "sizes":[0.5, 1.7, 2.5, 5, 10, 20],
-                "breaks":[0, 2500, 5000, 10000, 20000, 50000],
-                "title": "Estimated Lead Service Lines"
-              }
+              type:'none',
+              legend:"none"
             }
         },
       // thank you
@@ -538,7 +527,7 @@ var config = {
             title: 'Thank you for reading!',
             image: '',
             imageCredit: '',
-            description: "<small>Data sources:<br>NRDC<br>BlueConduit<br>US Census Bureau <br><br>Maps and animations by Raanan Gurewitsch</small>",
+            description: "<small>Data sources:<br>NRDC<br>BlueConduit<br>City of Toledo<br>US Census Bureau <br><br>Lead Service Line Estimates by Jared Webb<br>Story by Raanan Gurewitsch and Sheela Lal<br>Maps and animations by Raanan Gurewitsch</small>",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,
@@ -546,25 +535,14 @@ var config = {
               bearing:0
             },
             onChapterEnter: [
-                {
-                    layer: 'pws-lsl-estimated',
-                    opacity: 0.75
-                }
+
             ],
             onChapterExit: [
-                {
-                    layer: 'pws-lsl-estimated',
-                    opacity: 0
-                }
+
             ],
             chapterLegend: {
-              type:'bubble',
-              legend:{
-                "color":"#e8aa44",
-                "sizes":[0.5, 1.7, 2.5, 5, 10, 20],
-                "breaks":[0, 2500, 5000, 10000, 20000, 50000],
-                "title": "Estimated Lead Service Lines"
-              }
+              type:'none',
+              legend:"none"
             }
         },
     ]
