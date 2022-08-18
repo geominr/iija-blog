@@ -47,7 +47,7 @@ var config = {
             id: 'legacy',
             title: 'A legacy of hazardous infrastructure',
             image: 'newplot (5).png',
-            imageCredit: '<a href="https://data.census.gov/cedsci/table?q=housing%20characteristics&g=0100000US&tid=ACSDP5Y2020.DP04">American Community Survery</a>, BlueConduit',
+            imageCredit: '<a href="https://data.census.gov/cedsci/table?q=housing%20characteristics&g=0100000US&tid=ACSDP5Y2020.DP04">Housing Units by Year Built. American Community Survery</a>',
             description: "The US Census Bureau estimates show roughly 50% of housing units within America's public water systems were built before 1980. But lead pipes were banned in 1986, and remain the primary source of lead contamination in drinking water, an environmental hazard that has impacted the health of millions of Americans for decades.",
             location: {
               center: [-99.429,38.679],
@@ -117,7 +117,7 @@ var config = {
             title: 'A legacy of hazardous infrastructure',
             image: '',
             imageCredit: '',
-            description: "Anywhere between 20 to 70% of the service connections in these urban water systems are made of lead, installed underground anytime between 40 and 140 years ago. So how far will the Infrastructure Bill go toward helping these communities?",
+            description: "Among these urban water systems, the number of lead pipes can vary widely from under 10% to even over 80% of service pipes being lead. So how far will the Infrastructure Bill go toward helping these communities?",
             location: {
               center:[-85.439,42.980],
               zoom:5.09,
@@ -155,7 +155,7 @@ var config = {
             description: "When we map out how much money each state is allocated, it is clear that the apportionment was not guided by the number of lead service pipes per state. This map shows Western states with relatively fewer lead pipes will receive anywhere between $15,000 and $139,000 per lead service pipe.",
             location: {
               center: [-99.429,38.679],
-              zoom: 3.87,
+              zoom: 3.27,
               pitch:0,
               bearing:0
             },
@@ -221,7 +221,7 @@ var config = {
             title: 'What’s left over for the Midwest?',
             image: '',
             imageCredit: '',
-            description: "Now consider how many lead service pipes there are per capita in each state. Midwestern states&mdash;where most of the country’s lead pipes exist&mdash;will receive roughly $2,800 of investment per pipe. To put this in context, in 2019, the EPA estimates replacing a known lead service pipe costs $4,700, on average.",
+            description: "Now consider how many lead service pipes there are per capita in each state. Midwestern states&mdash;where most of the country’s lead pipes exist&mdash;will receive roughly $2,800 of investment per pipe. To put this in context, in 2019, the EPA estimates replacing a known lead service pipe costs <a href='https://www.epa.gov/sites/default/files/2019-10/documents/strategies_to_achieve_full_lead_service_line_replacement_10_09_19.pdf' target='_blank'>$4,700, on average.</a>",
             location: {
               center: [-99.429,38.679],
               zoom: 3.87,
@@ -326,7 +326,7 @@ var config = {
             title: 'Lessons learned from Flint, Michigan',
             image: '',
             imageCredit: '',
-            description: "When the Flint Water Crisis unfolded in 2015, the city was initially spending over $24,000 to replace a single lead pipe. With poor records leaving the city guessing (often incorrectly) where the lead was, Flint turned to artificial intelligence. With data science and machine learning, BlueConduit removed the guesswork and brought down the cost per replacement by 75% to $6,000. Now Toledo is doing the same.",
+            description: "BlueConduit’s technology was pioneered in Flint, Michigan in 2016 as the City’s water crisis unfolded. Without BlueConduit’s guidance, it cost Flint nearly $24,000 to get each lead service pipe out of the ground because poor records left the city guessing where the lead was. Thanks to big data and machine learning, BlueConduit took away the guesswork and brought down the cost per successful lead replacement by 75% to $6,000.",
             location: {
               center: [-83.829,43.039],
               zoom: 9.17,
@@ -350,7 +350,7 @@ var config = {
             title: 'Step 1: Collecting Reliable Data',
             image: '',
             imageCredit: '',
-            description: "The process starts with an inventory of verified service pipe materials. But records of when lead pipes were installed or replaced are incomplete and unreliable. Using cheap methods to inspect homes, the Department of Public Works maps out the location of lead, copper and other types of water service pipes.",
+            description: "The process starts with an inventory of whatever verified service pipe materials may exist. But records of when lead pipes were installed or replaced are incomplete and unreliable. Using cheap methods to inspect homes, the Department of Public Works maps out the location of lead, copper and other types of water service pipes.",
             location: {
               center: [-83.568,41.651],
               zoom: 15.49,
@@ -373,8 +373,8 @@ var config = {
               type:'choropleth',
               legend:{
                 "colors":["#ffffff","#fb3737","rgba(11, 37, 83)"],
-                "breaks":["Non-Lead","Lead","Unknown"],
-                "title": "Water Service Pipe Material"
+                "breaks":["Non-Lead","Lead","No Record"],
+                "title": "Water Service Pipe Material Record"
               }
             }
         },
@@ -384,7 +384,7 @@ var config = {
             title: 'Step 2: Finding the lead with machine learning',
             image: '',
             imageCredit: '',
-            description: "Using a representative sample of inspection records, Toledo can estimate the likelihood that the connection at every house contains lead, with the help of BlueConduit’s machine learning technology.",
+            description: "By following BlueConduit’s recommended representative sample for inspections, Toledo can estimate the likelihood that the connection at every house contains lead, with the help of machine learning technology.",
             location: {
               center: [-83.568,41.651],
               zoom: 15.49,
@@ -418,7 +418,7 @@ var config = {
             title: 'Step 3: Getting the Lead Out Together',
             image: 'https://blueconduit.com/wp-content/uploads/2022/03/BlueConduit-Toledo-Site-208.jpg',
             imageCredit: '<a href="#">BlueConduit</a>',
-            description: "Guided by local data, algorithms and lessons learned in over 50 cities around the country, the City of Toledo plans to replace all of their lead service pipes by 2027 and prioritize the communities with the highest risk and the most vulnerable populations.",
+            description: "Guided by local data, algorithms and lessons learned in over 50 cities around the country, the City of Toledo plans to replace all of their lead service pipes by 2027 (13 years ahead of schedule) and prioritize the communities with the highest risk and the most vulnerable populations.",
             location: {
               center: [-83.576,41.665],
               zoom: 11.5,
@@ -468,7 +468,7 @@ var config = {
             title: 'Replacing every lead service pipe in America',
             image: '',
             imageCredit: '',
-            description: "For the hundreds of other cities like Toledo, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and create better outcomes for millions of Americans.<br><br>Interested in learning more about BlueConduit? <br><br> <a href='https://blueconduit.com/get-a-demo/'><button class='cu-button'>Get a Demo</button></a>",
+            description: "For the <a href='https://blueconduit.com/lsl-solutions/lsl-estimates/' target='_blank'>hundreds of other cities</a> like Toledo, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and create better outcomes for millions of Americans.<br><br>Interested in learning more about BlueConduit? <br><br> <a href='https://blueconduit.com/get-a-demo/'><button class='cu-button'>Get a Demo</button></a>",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,

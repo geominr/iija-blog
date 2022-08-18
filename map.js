@@ -86,6 +86,11 @@ if (header.innerText.length > 0) {
 /* After building the elements and assigning content to the header these
 functions will loop through the chapters in the config.js file,
 create the vignette elements and assign them their respective content */
+if (screen.availWidth < 775) {
+  config.chapters.forEach((page, i) => {
+    page.location.zoom = page.location.zoom - 1;
+  });
+}
 
 config.chapters.forEach((record, idx) => {
     /* These first two variables will hold each vignette, the chapter
@@ -125,6 +130,9 @@ config.chapters.forEach((record, idx) => {
       if (legend != "none") {
         legendElement.className = 'legend-overlay';
         legendElement.id = 'legend';
+        if (screen.availWidth < 775) {
+            legendElement.style.fontSize = "small";
+        }
         var title = document.createElement('h4');
         title.innerText = legend.title;
         legendElement.appendChild(title);
