@@ -5,7 +5,7 @@ var config = {
     toptitle: 'BlueConduit | Data Science Blog | August 2022',
     title: "Funding for Lead Pipe Replacement Falls Short for Midwest",
     byline: 'By Raanan Gurewitsch and Sheela Lal',
-    description: "<small>Best viewed on Desktop or mobile Landscape Mode.</small><br><p>At the end of 2021, the United States government made an historic investment in the nation's infrastructure. Over the next five years, more than half of a trillion dollars will go to revitalizing roads and bridges, rail, transit, ports, airports, broadband and water systems.</p><p>Of the $550 billion in the Infrastructure Investment and Jobs Act (IIJA), $15 billion are earmarked for replacing lead water pipes, a paragon of the nation’s aging infrastructure, which deliver drinking water to tens of millions of people in the United States.</p><p>Getting the most from those dollars will take a lot of planning, coordination and, of course, data.</p>",
+    description: "<small>Best viewed on Desktop or mobile Landscape Mode.</small><br><p>At the end of 2021, the United States government made an historic investment in the nation's infrastructure. Over the next five years, more than half of a trillion dollars will go to revitalizing roads and bridges, rail, transit, ports, airports, broadband and water systems.</p><p>Of the $550 billion in the Bipartisan Infrastructure Law (BIL), $15 billion are earmarked for replacing lead water pipes, a paragon of the nation’s aging infrastructure, which deliver drinking water to tens of millions of people in the United States.</p><p>Getting the most from those dollars will take a lot of planning, coordination and, of course, data.</p>",
     chapters: [
       // intro
         {
@@ -117,7 +117,7 @@ var config = {
             title: 'A legacy of hazardous infrastructure',
             image: '',
             imageCredit: '',
-            description: "Among these urban water systems, the number of lead pipes can vary widely from under 10% to even over 80% of service pipes being lead. So how far will the Infrastructure Bill go toward helping these communities?",
+            description: "Among these urban water systems, the number of lead pipes can vary widely from under 10% to even over 80% of service pipes being lead. So how far will the Bipartisan Infrastructure Law go toward helping these communities?",
             location: {
               center:[-85.439,42.980],
               zoom:5.09,
@@ -291,7 +291,101 @@ var config = {
                 "title": "Estimated Lead Service Pipes"
               },
               extraLegend:{
-                "label":"Not enough IIJA Funding",
+                "label":"Not enough BIL Funding",
+                "trace-color":"#5da3ea"
+              }
+            }
+        },
+      // experts weigh in
+        {
+            id: 'experts1',
+            title: 'Experts are sounding the alarm',
+            image: '',
+            imageCredit: '',
+            description: 'Elin Betanzo of <a href="https://safewaterengineering.com/hottopics/2022/8/17/national-funding-for-lead-service-line-replacement-is-essential-for-states-with-highest-number-of-lead-pipes">Safe Water Engineering</a> suggests that "action must be taken as soon as possible to ensure equity in state funding of lead service line replacements" and that either the EPA or Congress should "change the allotment formula to prioritize lead service line money to the states with the most lead service lines to ensure funding goes where it\'s needed most."',
+            location: {
+              center:[-90.47,42.408],
+              zoom: 4.57,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'not-enough-dollars-per-lsl',
+                    opacity: 0.9
+                },
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0.75
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'not-enough-dollars-per-lsl',
+                    opacity: 0
+                },
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0
+                }
+            ],
+            chapterLegend: {
+              type:'bubble',
+              legend:{
+                "color":"#e8aa44",
+                "sizes":[0.5, 1.7, 2.5, 5, 10, 20],
+                "breaks":[0, 2500, 5000, 10000, 20000, 50000],
+                "title": "Estimated Lead Service Pipes"
+              },
+              extraLegend:{
+                "label":"Not enough BIL Funding",
+                "trace-color":"#5da3ea"
+              }
+            }
+        },
+      // we need inventories
+        {
+            id: 'experts2',
+            title: '',
+            image: '',
+            imageCredit: '',
+            description: "Other experts have suggested <a href='https://www.detroitnews.com/story/news/politics/2022/08/25/why-michigan-got-shortchanged-funding-replace-lead-water-lines/7893711001/?gnt-cfr=1'>lead pipe replacements could cost between $7,000 and $9,000 each</a>, with cost rising rapidly in 2022. And not only do Midwestern utilities need more to replace lead pipes, they also need money to map out where they are in the first place.",
+            location: {
+              center:[-90.47,42.408],
+              zoom: 4.57,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'not-enough-dollars-per-lsl',
+                    opacity: 0.9
+                },
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0.75
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'not-enough-dollars-per-lsl',
+                    opacity: 0
+                },
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0
+                }
+            ],
+            chapterLegend: {
+              type:'bubble',
+              legend:{
+                "color":"#e8aa44",
+                "sizes":[0.5, 1.7, 2.5, 5, 10, 20],
+                "breaks":[0, 2500, 5000, 10000, 20000, 50000],
+                "title": "Estimated Lead Service Pipes"
+              },
+              extraLegend:{
+                "label":"Not enough BIL Funding",
                 "trace-color":"#5da3ea"
               }
             }
@@ -326,7 +420,31 @@ var config = {
             title: 'Lessons learned from Flint, Michigan',
             image: '',
             imageCredit: '',
-            description: "BlueConduit’s technology was pioneered in Flint, Michigan in 2016 as the City’s water crisis unfolded. Without BlueConduit’s guidance, it cost Flint nearly $24,000 to get each lead service pipe out of the ground because poor records left the city guessing where the lead was. Thanks to big data and machine learning, BlueConduit took away the guesswork and brought down the cost per successful lead replacement by 75% to $6,000.",
+            description: "BlueConduit’s technology was pioneered in Flint, Michigan in 2016 as the City’s water crisis unfolded. Without BlueConduit’s guidance, it cost Flint nearly $24,000 to get each lead service pipe out of the ground because poor records left the city guessing where the lead was.",
+            location: {
+              center: [-83.829,43.039],
+              zoom: 9.17,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+
+            ],
+            onChapterExit: [
+
+            ],
+            chapterLegend:{
+              type: "none",
+              legend: "none"
+            },
+        },
+      // Flint
+        {
+            id: 'homageToFlint',
+            title: '',
+            image: '',
+            imageCredit: '',
+            description: "Thanks to big data and machine learning, BlueConduit took away the guesswork and brought down the cost per successful lead replacement by 75% to $6,000.",
             location: {
               center: [-83.829,43.039],
               zoom: 9.17,
@@ -353,7 +471,7 @@ var config = {
             description: "The process starts with an inventory of whatever verified service pipe materials may exist. But records of when lead pipes were installed or replaced are incomplete and unreliable. Using cheap methods to inspect homes, the Department of Public Works maps out the location of lead, copper and other types of water service pipes.",
             location: {
               center: [-83.568,41.651],
-              zoom: 15.49,
+              zoom: 14.5,
               pitch:0,
               bearing:0
             },
@@ -387,7 +505,7 @@ var config = {
             description: "By following BlueConduit’s recommended representative sample for inspections, Toledo can estimate the likelihood that the connection at every house contains lead, with the help of machine learning technology.",
             location: {
               center: [-83.568,41.651],
-              zoom: 15.49,
+              zoom: 14.5,
               pitch:0,
               bearing:0
             },
@@ -412,16 +530,16 @@ var config = {
               }
             }
         },
-      // Getting the lead out together
+      // ML 2
         {
-            id: 'toledoLSL1',
-            title: 'Step 3: Getting the Lead Out Together',
-            image: 'https://blueconduit.com/wp-content/uploads/2022/03/BlueConduit-Toledo-Site-208.jpg',
-            imageCredit: '<a href="#">BlueConduit</a>',
-            description: "Guided by local data, algorithms and lessons learned in over 50 cities around the country, the City of Toledo plans to replace all of their lead service pipes by 2027 (13 years ahead of schedule) and prioritize the communities with the highest risk and the most vulnerable populations.",
+            id: 'toledoLSL3.1',
+            title: '',
+            image: '',
+            imageCredit: '',
+            description: "The predictions show us similar trends to other cities, where lead pipes tend to be concentrated in areas with older housing, lower income levels and more minorities.",
             location: {
               center: [-83.576,41.665],
-              zoom: 11.5,
+              zoom: 11.05,
               pitch:0,
               bearing:0
             },
@@ -429,27 +547,11 @@ var config = {
               {
                   layer: 'toledo-lsl-percent',
                   opacity: 0.75
-              },
-              {
-                  layer: 'lead-phases-outline',
-                  opacity: 0.85
-              },
-              {
-                  layer: 'lead-phases-points',
-                  opacity: 1
               }
             ],
             onChapterExit: [
               {
                   layer: 'toledo-lsl-percent',
-                  opacity: 0
-              },
-              {
-                  layer: 'lead-phases-outline',
-                  opacity: 0
-              },
-              {
-                  layer: 'lead-phases-points',
                   opacity: 0
               }
             ],
@@ -462,13 +564,152 @@ var config = {
               }
             }
         },
+      // ML 3
+        {
+            id: 'toledoLSL3.2',
+            title: '',
+            image: '',
+            imageCredit: '',
+            description: "With BlueConduit’s analytics, decision makers in Toledo can identify the highest risk communities to target in their newly launched replacement program.",
+            location: {
+              center: [-83.576,41.665],
+              zoom: 11.05,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+              {
+                  layer: 'toledo-med-income',
+                  opacity: 0.75
+              }
+            ],
+            onChapterExit: [
+              {
+                  layer: 'toledo-med-income',
+                  opacity: 0
+              }
+            ],
+            chapterLegend: {
+              type:'choropleth',
+              legend:{
+                "colors":["#e8a945","#f7d592","#ffffff","#83bb63","#4e7935"],
+                "breaks":["$10,000","$30,000","$50,000","$75,000","$100,000 or more"],
+                "title": "Est. Median Income (2020)"
+              }
+            }
+        },
+      // Getting the lead out together
+        {
+            id: 'toledoLSL1',
+            title: 'Step 3: Getting the Lead Out Together',
+            image: 'https://blueconduit.com/wp-content/uploads/2022/03/BlueConduit-Toledo-Site-208.jpg',
+            imageCredit: '<a href="#">BlueConduit</a>',
+            description: "Following this data-and-equity-driven approach, the City of Toledo plans to replace all of their lead service pipes by 2027 in just five one-to-two-year phases. That's 13 years earlier than what the City originally projected.",
+            location: {
+              center: [-83.576,41.665],
+              zoom: 11.05,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+              {
+                  layer: 'toledo-black-pop',
+                  opacity: 0.75
+              },
+              {
+                  layer: 'lead-phases-outline',
+                  opacity: 0.95
+              },
+              {
+                  layer: 'lead-phases-labels',
+                  opacity: 1
+              },
+              {
+                  layer: 'pws-lsl-estimated',
+                  opacity: 0
+              },
+              {
+                  layer: 'customer-points',
+                  opacity: 0
+              }
+            ],
+            onChapterExit: [
+              {
+                  layer: 'toledo-black-pop',
+                  opacity: 0
+              },
+              {
+                  layer: 'lead-phases-outline',
+                  opacity: 0
+              },
+              {
+                  layer: 'lead-phases-labels',
+                  opacity: 0
+              }
+            ],
+            chapterLegend: {
+              type:'choropleth',
+              legend:{
+                "colors":["#ffffff","#e1c5f7","#d1a5f3","#ad5dea","#4f117e"],
+                "breaks":["0-10%","10-25%","25-50%","50-75%","75-100%"],
+                "title": "Est. Black Population (%, 2020)"
+              }
+            }
+        },
+      // Tech's impact
+        {
+            id: 'impactSlide0',
+            title: '',
+            image: '',
+            imageCredit: '',
+            description: "Similar success stories are unfolding across the region. BlueConduit's technology has already analyzed over 1.5 million service pipes across 50 cities and towns, saving more than $100 million of tax-payer money.",
+            location: {
+              center:[-86.687,41.621],
+              zoom: 5.57,
+              pitch:0,
+              bearing:0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0.75
+                },
+                {
+                    layer: 'customer-points',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0.75
+                },
+                {
+                    layer: 'customer-points',
+                    opacity: 0
+                }
+            ],
+            chapterLegend: {
+              type:'bubble',
+              legend:{
+                "color":"#e8aa44",
+                "sizes":[0.5, 1.7, 2.5, 5, 10, 20],
+                "breaks":[0, 2500, 5000, 10000, 20000, 50000],
+                "title": "Estimated Lead Service Pipes"
+              },
+              extraLegend: {
+                "label": "BlueConduit Customer",
+                "svg": "BlueConduit Updated Logo_Final_Mark.svg"
+              }
+            }
+        },
       // Mapping our progress around the country
         {
             id: 'nationwideModel',
             title: 'Replacing every lead service pipe in America',
             image: '',
             imageCredit: '',
-            description: "For the <a href='https://blueconduit.com/lsl-solutions/lsl-estimates/' target='_blank'>hundreds of other cities</a> like Toledo, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and create better outcomes for millions of Americans.<br><br>Interested in learning more about BlueConduit? <br><br> <a href='https://blueconduit.com/get-a-demo/'><button class='cu-button'>Get a Demo</button></a>",
+            description: "For the <a href='https://blueconduit.com/lsl-solutions/lsl-estimates/' target='_blank'>hundreds of other American cities</a> with lead service pipes, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and protect our public health.<br><br>Interested in learning more about BlueConduit? <br><br> <a href='https://blueconduit.com/get-a-demo/'><button class='cu-button'>Get a Demo</button></a>",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,

@@ -133,21 +133,32 @@ config.chapters.forEach((record, idx) => {
         if (screen.availWidth < 775) {
             legendElement.style.fontSize = "small";
         }
-        var title = document.createElement('h4');
-        title.innerText = legend.title;
-        legendElement.appendChild(title);
         if ("extraLegend" in record.chapterLegend) {
           var legendDiv = document.createElement('div');
-          var legendItem = document.createElement('span');
-          legendItem.className = 'legend-item';
-          legendItem.style.backgroundColor = record.chapterLegend.extraLegend["trace-color"];
+          legendDiv.style.paddingTop = "20px";
+          if ("svg" in record.chapterLegend.extraLegend) {
+            svg = document.createElement("img");
+            svg.setAttribute("src",record.chapterLegend.extraLegend.svg);
+            svg.setAttribute("width","24px");
+
+            legendDiv.appendChild(svg);
+          }
+          else {
+            var legendItem = document.createElement('span');
+            legendItem.className = 'legend-item';
+            legendItem.style.backgroundColor = record.chapterLegend.extraLegend["trace-color"];
+            legendDiv.appendChild(legendItem);
+          }
 
           var value = document.createElement('span');
+          value.style.paddingLeft = "24px";
           value.innerHTML = `${record.chapterLegend.extraLegend.label}`;
-          legendDiv.appendChild(legendItem);
           legendDiv.appendChild(value);
           legendElement.appendChild(legendDiv);
         }
+        var title = document.createElement('h4');
+        title.innerText = legend.title;
+        legendElement.appendChild(title);
         if (record.chapterLegend.type == "choropleth"){
           if (legend.colors.length == legend.breaks.length) {
             // add legend-items
@@ -192,6 +203,7 @@ config.chapters.forEach((record, idx) => {
             }
           }
         }
+
       }
       record['legendElement'] = legendElement;
     }
