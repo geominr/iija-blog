@@ -57,6 +57,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'pws-lsl-estimated',
+                    opacity: 0
+                },
+                {
                     layer: 'state-lsl-estimated',
                     opacity: 0.75
                 }
@@ -98,7 +102,7 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'pws-lsl-estimated',
-                    opacity: 0
+                    opacity: 0.75
                 }
             ],
             chapterLegend: {
@@ -114,7 +118,7 @@ var config = {
       // legacy -> Midwest 2
         {
             id: 'midwest1',
-            title: 'A legacy of hazardous infrastructure',
+            title: '',
             image: '',
             imageCredit: '',
             description: "Among these urban water systems, the number of lead pipes can vary widely from under 10% to even over 80% of service pipes being lead. So how far will the Bipartisan Infrastructure Law go toward helping these communities?",
@@ -176,7 +180,7 @@ var config = {
               legend:{
                 "colors":["#85bb65","#fac657","#f7d592","#ffffff"],
                 "breaks":[ "$50,000 or more", "$10,000-25,000", "$5,000-10,000", "< $4,700 (avg. cost of replacement)"],
-                "title": "Federal Investment per Lead Service Pipe"
+                "title": "BIL Dollars per Lead Service Pipe"
               }
             }
         },
@@ -232,6 +236,14 @@ var config = {
               {
                   layer: 'state-lsl-per-capita',
                   opacity: 0.75
+              },
+              {
+                  layer: 'not-enough-dollars-per-lsl',
+                  opacity: 0
+              },
+              {
+                  layer: 'pws-lsl-estimated',
+                  opacity: 0
               }
             ],
             onChapterExit: [
@@ -275,11 +287,11 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'not-enough-dollars-per-lsl',
-                    opacity: 0
+                    opacity: 0.9
                 },
                 {
                     layer: 'pws-lsl-estimated',
-                    opacity: 0
+                    opacity: 0.75
                 }
             ],
             chapterLegend: {
@@ -322,11 +334,11 @@ var config = {
             onChapterExit: [
                 {
                     layer: 'not-enough-dollars-per-lsl',
-                    opacity: 0
+                    opacity: 0.9
                 },
                 {
                     layer: 'pws-lsl-estimated',
-                    opacity: 0
+                    opacity: 0.75
                 }
             ],
             chapterLegend: {
@@ -404,7 +416,14 @@ var config = {
               bearing:0
             },
             onChapterEnter: [
-
+              {
+                  layer: 'not-enough-dollars-per-lsl',
+                  opacity: 0
+              },
+              {
+                  layer: 'pws-lsl-estimated',
+                  opacity: 0
+              }
             ],
             onChapterExit: [
 
