@@ -2,7 +2,7 @@ var config = {
     accessToken: 'pk.eyJ1IjoiYmx1ZWNvbmR1aXQtcmFhbmFuIiwiYSI6ImNrcDQ1dmI5cTA3YWgyeHQ4eTgya3RkbmMifQ.Yy7t6IfU4KV2QTGhl91PZA',
     style: 'mapbox://styles/blueconduit-raanan/cl3uawu86002l16o3wjz045l6',
     alignment: 'left',
-    toptitle: 'BlueConduit | Data Science Blog | August 2022',
+    toptitle: 'BlueConduit | Data Science Blog | September 2022',
     title: "Funding for Lead Pipe Replacement Falls Short for Midwest",
     byline: 'By Raanan Gurewitsch and Sheela Lal',
     description: "<small>Best viewed on Desktop or mobile Landscape Mode.</small><br><p>At the end of 2021, the United States government made an historic investment in the nation's infrastructure. Over the next five years, more than half of a trillion dollars will go to revitalizing roads and bridges, rail, transit, ports, airports, broadband and water systems.</p><p>Of the $550 billion in the Bipartisan Infrastructure Law (BIL), $15 billion are earmarked for replacing lead water pipes, a paragon of the nation’s aging infrastructure, which deliver drinking water to tens of millions of people in the United States.</p><p>Getting the most from those dollars will take a lot of planning, coordination and, of course, data.</p>",
@@ -13,7 +13,7 @@ var config = {
             title: 'Is $15 Billion enough?',
             image: '',
             imageCredit: '',
-            description: "There are believed to be between 6 and 10 million lead service pipes in use throughout the United States. Will $15 billion be enough to replace them all with safer ones?",
+            description: "There are believed to be between 6 and 10 million lead pipes in use throughout the United States. Will $15 billion be enough to replace them all with safer ones?",
             location: {
                 center: [-99.429,38.679],
                 zoom: 3.27,
@@ -48,7 +48,7 @@ var config = {
             title: 'A legacy of hazardous infrastructure',
             image: 'newplot (5).png',
             imageCredit: '<a href="https://data.census.gov/cedsci/table?q=housing%20characteristics&g=0100000US&tid=ACSDP5Y2020.DP04">Housing Units by Year Built. American Community Survery</a>',
-            description: "The US Census Bureau estimates show roughly 50% of housing units within America's public water systems were built before 1980. But lead pipes were banned in 1986, and remain the primary source of lead contamination in drinking water, an environmental hazard that has impacted the health of millions of Americans for decades.",
+            description: "Lead pipes were banned in 1986. Yet, the US Census Bureau estimates show roughly 50% of housing units within America's public water systems were built before 1980. Lead pipes remain the primary source of lead contamination in drinking water, an environmental hazard that has impacted the health of millions of Americans for decades.",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,
@@ -156,7 +156,7 @@ var config = {
             title: 'Who gets the most money for LSL replacement?',
             image: '',
             imageCredit: '',
-            description: "When we map out how much money each state is allocated, it is clear that the apportionment was not guided by the number of lead service pipes per state. This map shows Western states with relatively fewer lead pipes will receive anywhere between $15,000 and $139,000 per lead service pipe.",
+            description: "When we map out how much money each state is allocated, it is clear that the apportionment was not guided by the number of lead pipes per state. This map shows Western states with relatively fewer lead pipes will receive anywhere between $15,000 and $139,000 per lead service pipe.",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,
@@ -190,7 +190,7 @@ var config = {
             title: '',
             image: '',
             imageCredit: '',
-            description: "California will receive $3.5 billion to replace its estimated 65,000 lead service pipes. More than $53,846 per pipe. Fortunately, the excess money for lead pipe replacement can be used to solve other pressing drinking water challenges, like drought management.",
+            description: "California will receive $3.5 billion to replace its estimated 65,000 lead pipes. More than $53,846 per pipe. Fortunately, the excess money for lead pipe replacement can be used to solve other pressing drinking water challenges, like drought management.",
             location: {
               center: [-119.517,37.271],
               zoom: 5.53,
@@ -225,7 +225,7 @@ var config = {
             title: 'What’s left over for the Midwest?',
             image: '',
             imageCredit: '',
-            description: "Now consider how many lead service pipes there are per capita in each state. Midwestern states&mdash;where most of the country’s lead pipes exist&mdash;will receive roughly $2,800 of investment per pipe. To put this in context, in 2019, the EPA estimates replacing a known lead service pipe costs <a href='https://www.epa.gov/sites/default/files/2019-10/documents/strategies_to_achieve_full_lead_service_line_replacement_10_09_19.pdf' target='_blank'>$4,700, on average.</a>",
+            description: "Now consider how many lead pipes there are per capita in each state. Midwestern states&mdash;where most of the country’s lead pipes exist&mdash;will receive roughly $2,800 of investment per pipe. To put this in context, in 2019, the EPA estimates replacing a known lead service pipe costs <a href='https://www.epa.gov/sites/default/files/2019-10/documents/strategies_to_achieve_full_lead_service_line_replacement_10_09_19.pdf' target='_blank'>$4,700, on average.</a>",
             location: {
               center: [-99.429,38.679],
               zoom: 3.87,
@@ -267,7 +267,7 @@ var config = {
             title: 'Barely scratching the surface',
             image: '',
             imageCredit: '',
-            description: "For the likes of Michigan, Ohio, Wisconsin, Illinois and New Jersey, $2,800 per pipe barely scratches the surface for developing a service pipe inventory, let alone ultimately replacing the pipes. That's why cities across the region will need to invest early in cost-saving tech to replace more lead service pipes.",
+            description: "For the likes of Michigan, Ohio, Wisconsin, Illinois and New Jersey, $2,800 per pipe barely scratches the surface for developing a an inventory of all the lead pipes in the drinking water system, let alone ultimately replacing the pipes. That's why cities across the region will need to invest early in cost-saving tech to replace more lead pipes.",
             location: {
               center:[-90.47,42.408],
               zoom: 4.57,
@@ -408,7 +408,7 @@ var config = {
             title: 'Case study: Toledo, Ohio',
             image: 'https://blueconduit.com/wp-content/uploads/2022/04/Toledo-announcement-1024x771.jpg',
             imageCredit: '<a href="https://blueconduit.com/post/toledo-announces-city-wide-lead-service-line-replacement-plan/">BlueConduit</a>',
-            description: "In Ohio, the City of Toledo is partnering with <a href='https://blueconduit.com'>BlueConduit</a> to use data analytics and machine learning to find and replace their lead service pipes, starting in the communities with the most need.",
+            description: "In Ohio, the City of Toledo is partnering with <a href='https://blueconduit.com'>BlueConduit</a> to use data analytics and machine learning to find and replace their lead pipes, starting in the communities with the most need.",
             location: {
               center: [-83.576,41.665],
               zoom: 11.5,
@@ -555,7 +555,7 @@ var config = {
             title: '',
             image: '',
             imageCredit: '',
-            description: "The predictions show us similar trends to other cities, where lead pipes tend to be concentrated in areas with older housing, lower income levels and more minorities.",
+            description: "The predictions show us trends similar to other cities, where lead pipes tend to be concentrated in areas with older housing, lower income levels and more minorities.",
             location: {
               center: [-83.576,41.665],
               zoom: 11.05,
@@ -623,7 +623,7 @@ var config = {
             title: 'Step 3: Getting the Lead Out Together',
             image: 'https://blueconduit.com/wp-content/uploads/2022/03/BlueConduit-Toledo-Site-208.jpg',
             imageCredit: '<a href="#">BlueConduit</a>',
-            description: "Following this data-and-equity-driven approach, the City of Toledo plans to replace all of their lead service pipes by 2027 in just five one-to-two-year phases. That's 13 years earlier than what the City originally projected.",
+            description: "Following this data-and-equity-driven approach, the City of Toledo plans to replace all of their lead pipes by 2027 in just five one-to-two-year phases. That's 13 years earlier than what the City originally projected.",
             location: {
               center: [-83.576,41.665],
               zoom: 11.05,
@@ -728,7 +728,7 @@ var config = {
             title: 'Replacing every lead service pipe in America',
             image: '',
             imageCredit: '',
-            description: "For the <a href='https://blueconduit.com/lsl-solutions/lsl-estimates/' target='_blank'>hundreds of other American cities</a> with lead service pipes, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and protect our public health.<br><br>Interested in learning more about BlueConduit? <br><br> <a href='https://blueconduit.com/get-a-demo/'><button class='cu-button'>Get a Demo</button></a>",
+            description: "For the <a href='https://blueconduit.com/lsl-solutions/lsl-estimates/' target='_blank'>hundreds of other American cities</a> with lead pipes, now is the time to invest in technology that will stretch Federal dollars farther to get the lead out and protect our public health.<br><br>Interested in learning more about BlueConduit? <br><br> <a href='https://blueconduit.com/get-a-demo/'><button class='cu-button'>Get a Demo</button></a>",
             location: {
               center: [-99.429,38.679],
               zoom: 3.27,
